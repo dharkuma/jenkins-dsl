@@ -20,7 +20,7 @@ job('maven-dsl') {
 		branch('master')
 		remote {
 			url('https://github.com/dharkuma/JavaHelloWorld.git')
-			credentials('dharkuma')
+			credentials('github')
 		}
 		}
 
