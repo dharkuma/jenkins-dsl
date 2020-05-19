@@ -13,8 +13,7 @@ job('maven-dsl' {
 	description('new job using DSL')
 	scm {
 		github('https://github.com/dharkuma/')
-		git('https://github.com/dharkuma/JavaHelloWorld.git')
-		branch('master')
+		git('https://github.com/dharkuma/JavaHelloWorld.git', 'master', {node -> node / 'extensions' << '' })
 		remote {
 			credentials('dharkuma')
 		}
@@ -42,6 +41,4 @@ job('maven-dsl' {
 		}
 
 	}
-
-
 )
