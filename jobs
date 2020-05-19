@@ -16,7 +16,7 @@ job('maven-dsl') {
 	}
 
 	scm {
-		github('https://github.com/dharkuma/JavaHelloWorld.git')
+		github('https://github.com/dharkuma/JavaHelloWorld.git', {node -> node / 'extensions' << '' })
 		branch('master')
 		remote {
 			credentials('dharkuma')
