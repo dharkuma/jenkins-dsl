@@ -29,7 +29,7 @@ job('maven-dsl' {
 			mavenInstallation('jenkins-maven')
 			goals('-B -DskipTests clean package')
 		}
-		maven (
+		maven {
 			mavenInstallation('jenkins-maven')
 			goals('test')
 		}
