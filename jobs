@@ -8,3 +8,40 @@ job('new-dsl-job') {
     
   }
 }
+
+job('maven-dsl' {
+	description('new job using DSL')
+	scm {
+		github('https://github.com/dharkuma/')
+		git('https://github.com/dharkuma/JavaHelloWorld.git')
+		branch('master')
+		remote {
+			credentials('dharkuma')
+		}
+	}
+
+	triggers {
+		gitHubPushTrigger('true')
+	}
+
+	steps {
+		maven {
+			mavenInstallation('jenkins-maven')
+			goals('-B -DskipTests clean package')
+		}
+		maven (
+			mavenInstallation('jenkins-maven')
+			goals('test')
+		}
+		shell {
+			command('''
+				echo "Deploying the jar in system"
+				java -jar target/my-app-1.0-SNAPSHOT.jar
+			''')	
+
+		}
+
+	}
+
+
+)
