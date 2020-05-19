@@ -1,0 +1,10 @@
+job('new-dsl-job') {
+  
+  description('new job for testing')
+  
+  parameters {
+  
+    booleanParam('Show Name', true)
+    
+  }
+}
