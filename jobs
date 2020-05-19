@@ -1,6 +1,6 @@
 job('new-dsl-job') {
   
-  description('new job for testing')
+  description('new job via github')
   
   parameters {
   
