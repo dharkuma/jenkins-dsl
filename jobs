@@ -16,7 +16,20 @@ job('maven-dsl') {
 	}
 
 	scm {
-		git('https://github.com/dharkuma/JavaHelloWorld.git', 'master', {node -> node / 'extensions' << '' })
+		git {
+			browser {
+				githubWeb {
+					repoUrl('https://github.com/dharkuma/JavaHelloWorld.git')
+				}
+			}
+		branch('master')
+		remote {
+			credentials('dharkuma')
+		}
+
+		}
+
+
 	}
 
 	triggers {
