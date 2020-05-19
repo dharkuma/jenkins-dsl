@@ -20,7 +20,7 @@ job('maven-dsl') {
 	}
 
 	triggers {
-		gitHubPushTrigger('true')
+		gitHubPushTrigger()
 	}
 
 	steps {
